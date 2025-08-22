@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:coin_cap/pages/home_page.dart';
+import 'package:coin_cap/services/http_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
@@ -8,6 +9,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Load the configuration
   await loadConfig();
+  // Register the HttpServices with GetIt
+  registerHttpServices();
   runApp(const MyApp());
 }
 
@@ -18,6 +21,12 @@ Future<void> loadConfig() async {
   print(_content);
 }
 
+// Register AppConfig with GetIt
+void registerHttpServices(){
+  GetIt.instance.registerSingleton<HttpServices>(
+    HttpServices(),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
