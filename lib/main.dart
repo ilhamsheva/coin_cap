@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:coin_cap/models/app_config.dart';
 import 'package:coin_cap/pages/home_page.dart';
 import 'package:coin_cap/services/http_services.dart';
 import 'package:flutter/material.dart';
@@ -16,16 +17,18 @@ void main() async {
 
 // Function for load config (future function)
 Future<void> loadConfig() async {
-  String _loadContent = await rootBundle.loadString("assets/config/main.json");
-  Map _content = jsonDecode(_loadContent);
-  print(_content);
+  String loadContent = await rootBundle.loadString("assets/config/main.json");
+  Map content = jsonDecode(loadContent);
+
+  // Making object from JSON
+  final appConfig = AppConfig(baseURL: content["COIN_CAP_BASE_URL"]);
+  // Register AppConfig with GetIt
+  GetIt.instance.registerSingleton<AppConfig>(appConfig);
 }
 
 // Register AppConfig with GetIt
-void registerHttpServices(){
-  GetIt.instance.registerSingleton<HttpServices>(
-    HttpServices(),
-  );
+void registerHttpServices() {
+  GetIt.instance.registerSingleton<HttpServices>(HttpServices());
 }
 
 class MyApp extends StatelessWidget {
