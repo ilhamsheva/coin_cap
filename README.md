@@ -1,16 +1,34 @@
-# coin_cap
+# 🪙 Coin Cap
 
-A new Flutter project.
+**Coin Cap** adalah aplikasi untuk memantau harga dan informasi aset kripto secara real-time. Aplikasi ini dibuat menggunakan framework **Flutter** dan ditujukan sebagai latihan pribadi.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📅 Timeline Pengerjaan
 
-A few resources to get you started if this is your first Flutter project:
+### 🗓 21 Agustus 2025
+- Membuat project dengan command:
+  ```sh
+  flutter create coin_cap
+- Membuat struktur dasar aplikasi dengan Scaffold dan layout awal.
+- Menambahkan dropdown untuk memilih jenis coin.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🗓 22 Agustus 2025
+- Integrasi REST API menggunakan ```Dio``` untuk mendapatkan data coin.
+- Membuat models untuk mapping data coin dari JSON.
+- Membuat service class untuk memanggil API.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🗓 23 Agustus 2025
+- Menampilkan informasi coin: gambar, harga terkini, dan persentase perubahan.
+- Membuat custom widget untuk menampilkan data coin agar reusable.
+
+### 🗓 24 Agustus 2025
+- Menambahkan bagian ```descriptionCoin``` agar bisa menampilkan deskripsi lengkap setiap aset kripto.
+- Membungkus deskripsi dengan ```SingleChildScrollView``` agar bisa di-scroll.
+- Mengatur layout agar tetap responsif di berbagai ukuran layar.
+
+### 🗓 25 Agustus 2025
+- Refinement UI (padding, warna, font).
+- Menambahkan error handling ketika data API gagal dimuat.
+- Testing aplikasi di emulator dan perangkat nyata.
+- **Push project ke GitHub.**
